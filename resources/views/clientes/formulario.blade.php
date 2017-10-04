@@ -26,14 +26,18 @@
                     
 
                     {!! Form::label('nome','Nome') !!}
-                    {!! Form::input('text','nome',null, ['class' => 'form-control','autofocus']) !!}
+                    {!! Form::input('text','nome',null, ['class' => 'form-control','autofocus','required="Preencha um nome"']) !!}
 
                     {!! Form::label('endereco','Endereço') !!}
-                    {!! Form::input('text','endereco',null, ['class' => 'form-control','']) !!}
+                    {!! Form::input('text','endereco',null, ['class' => 'form-control','required']) !!}
 
                     {!! Form::label('numero','Número') !!}
-                    {!! Form::input('text','numero',null, ['class' => 'form-control','']) !!}
+                    {!! Form::number('numero',null, ['class' => 'form-control','required']) !!}
 
+                    {!! Form::label('email','Email') !!}
+                    {!! Form::email('email',null, ['class' => 'form-control','required']) !!}
+
+                    <br>
                     {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
 
                     {!! Form::close() !!}
