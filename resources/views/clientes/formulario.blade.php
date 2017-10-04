@@ -17,16 +17,22 @@
                         </div>
                     @endif
 
-                    {!! Form::open(['url' => 'clientes/salvar']) !!}
+                    @if(Request::is('*/editar'))
+                        {!! Form::model($cliente, ['method'=>'PATCH', 'url' => 'clientes/'.$cliente->id]) !!}
+                    @else
+                        {!! Form::open(['url' => 'clientes/salvar']) !!}
+                    @endif
+
+                    
 
                     {!! Form::label('nome','Nome') !!}
-                    {!! Form::input('text','nome','', ['class' => 'form-control','autofocus']) !!}
+                    {!! Form::input('text','nome',null, ['class' => 'form-control','autofocus']) !!}
 
                     {!! Form::label('endereco','Endereço') !!}
-                    {!! Form::input('text','endereco','', ['class' => 'form-control','']) !!}
+                    {!! Form::input('text','endereco',null, ['class' => 'form-control','']) !!}
 
                     {!! Form::label('numero','Número') !!}
-                    {!! Form::input('text','numero','', ['class' => 'form-control','']) !!}
+                    {!! Form::input('text','numero',null, ['class' => 'form-control','']) !!}
 
                     {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
 
