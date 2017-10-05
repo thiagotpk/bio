@@ -37,9 +37,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
                         @guest
-                            <li><a href="{{ url('/') }}">Home</a></li>
                         @else
+                            <li><a href="{{ url('/') }}">Home</a></li>
                             <li><a href="{{ url('/clientes') }}">Clientes</a></li>
+                            <li><a href="{{ url('/unidades') }}">Unidades</a></li>
                         @endguest
                     </ul>
 

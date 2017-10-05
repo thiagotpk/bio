@@ -20,6 +20,9 @@ Route::post('clientes/salvar', 'ClientesController@salvar');
 Route::patch('clientes/{cliente}', 'ClientesController@atualizar');
 Route::delete('clientes/{cliente}', 'ClientesController@deletar');
 
+Route::get('unidades', 'UnidadesController@index');
+Route::get('unidades/novo', 'UnidadesController@novo');
+Route::post('unidades/salvar', 'UnidadesController@salvar');
 
 Auth::routes();
 
