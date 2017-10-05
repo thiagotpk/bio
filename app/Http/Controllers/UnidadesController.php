@@ -18,7 +18,8 @@ class UnidadesController extends Controller
      */
     public function index()
     {
-        return view('unidades.lista');
+        $unidades= Unidade::get();
+        return view('unidades.lista', ['unidades'=>$unidades]);
     }
 
     public function novo()
@@ -35,6 +36,36 @@ class UnidadesController extends Controller
         \Session::flash('mensagem_sucesso', 'Unidade cadastrada com sucesso!');
 
         return Redirect::to('unidades/novo');
+
+    }
+
+    public function editar($id){
+
+        $unidade = Unidade::findOrFail($id);
+
+        return view('unidades.formulario', ['unidade' => $unidade]);
+    }
+
+    public function atualizar($id, Request $request){
+
+        $unidade = Unidade::findOrFail($id);
+
+        $unidade->update($request->all());
+
+        \Session::flash('mensagem_sucesso', 'Unidade atualizada com sucesso!');
+
+        return Redirect::to('unidades/'.$unidade->id.'/editar');
+    }
+
+    public function deletar($id){
+
+        $unidade = Unidade::findOrFail($id);
+
+        $unidade->delete();
+
+        \Session::flash('mensagem_sucesso', 'Unidade deletada com sucesso!');
+
+        return Redirect::to('unidades');
 
     }
 }

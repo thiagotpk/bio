@@ -34,6 +34,8 @@
                     {!! Form::label('numero','Número') !!}
                     {!! Form::input('text','numero',null, ['class' => 'form-control','']) !!}
 
+                    {!! Form::label('unidade_id','Unidade') !!}
+                    {!! Form::select('unidade_id', ['L' => 'Large', 'S' => 'Small'], null, ['placeholder' => 'Selecione a unidade do cliente', 'class' => 'form-control']) !!}
                     {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
 
                     {!! Form::close() !!}

@@ -18,7 +18,7 @@
                         @endif
 
                         @if(Request::is('*/editar'))
-                            {!! Form::model($cliente, ['method'=>'PATCH', 'url' => 'clientes/'.$cliente->id]) !!}
+                            {!! Form::model($unidade, ['method'=>'PATCH', 'url' => 'unidades/'.$unidade->id]) !!}
                         @else
                             {!! Form::open(['url' => 'unidades/salvar']) !!}
                         @endif

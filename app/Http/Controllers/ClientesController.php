@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Cliente;
+use App\Unidade;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -14,7 +15,8 @@ class ClientesController extends Controller
     public function index()
     {
         $clientes= Cliente::get();
-    	return view('clientes.lista', ['clientes'=>$clientes]);
+        $unidades = Unidade::get();
+    	return view('clientes.lista', ['clientes'=>$clientes, 'unidades'=>$unidades]);
     }
 
     public function novo()

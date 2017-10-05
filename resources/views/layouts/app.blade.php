@@ -39,8 +39,8 @@
                         @guest
                         @else
                             <li><a href="{{ url('/') }}">Home</a></li>
-                            <li><a href="{{ url('/clientes') }}">Clientes</a></li>
                             <li><a href="{{ url('/unidades') }}">Unidades</a></li>
+                            <li><a href="{{ url('/clientes') }}">Clientes</a></li>
                         @endguest
                     </ul>
 

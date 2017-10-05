@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col-md-12 col-md-offset-0">
             <div class="panel panel-default">
                 <div class="panel-heading">
                 	Unidades
@@ -27,12 +27,27 @@
                         <th>Ações</th>
                         
                         <tbody>
-
+                        @foreach($unidades as $unidade)
+                            <tr>
+                                <td>{{ $unidade->nome }}</td>
+                                <td>{{ $unidade->endereco }}</td>
+                                <td>{{ $unidade->numero }}</td>
+                                <td>{{ $unidade->complemento }}</td>
+                                <td>{{ $unidade->bairro }}</td>
+                                <td>{{ $unidade->cidade }}</td>
+                                <td>
+                                    <a href="unidades/{{ $unidade->id }}/editar" class="btn btn-default">Editar</a>
+                                    {!! Form::open(['method' => 'DELETE', 'url' => '/unidades/'.$unidade->id, 'style' => 'display: inline;']) !!}
+                                    <button type="submit" class="btn btn-default">Excluir</button>
+                                    {!! Form::close() !!}
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
 @endsection
