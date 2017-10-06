@@ -35,11 +35,9 @@
                     {!! Form::number('numero',null, ['class' => 'form-control','required']) !!}
 
                     {!! Form::label('email','Email') !!}
-                    {!! Form::email('email',null, ['class' => 'form-control','required']) !!}
-
+                    {!! Form::label('unidade_id','Unidade') !!}
+                    {!! Form::select('unidade_id', $unidades, null, ['class' => 'form-control', 'placeholder'=>'Selecione uma unidade','required']) !!}
                     <br>
-                    {!! Form::select('unidade_id', ['L' => 'Large', 'S' => 'Small'], null, ['placeholder' => 'Selecione a unidade do cliente', 'class' => 'form-control']) !!}
-
                     {!! Form::submit('Salvar', ['class' => 'btn btn-primary']) !!}
 
                     {!! Form::close() !!}

@@ -28,7 +28,7 @@ body > .ui-pnotify {
   z-index: 100040;
 }
 .ui-pnotify-modal-overlay {
-  background-color: rgba(0, 0, 0, .4);
+  background-color: rgba(0, 0, 0, 0.08);
   top: 0;
   left: 0;
   position: absolute;

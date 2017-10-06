@@ -21,6 +21,7 @@
                         <th>Nome</th>
                         <th>Endereço</th>
                         <th>Número</th>
+                        <th>Unidade</th>
                         <th>Ações</th>
                         <tbody>
                             @foreach($clientes as $cliente)
@@ -28,10 +29,11 @@
                                 <td>{{ $cliente->nome }}</td>
                                 <td>{{ $cliente->endereco }}</td>
                                 <td>{{ $cliente->numero }}</td>
+                                <td>{{ $cliente-> nomeU }}</td>
                                 <td>
                                 <a href="clientes/{{ $cliente->id }}/editar" class="btn btn-default">Editar</a>
-                                {!! Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id, 'style' => 'display: inline;']) !!}
-                                <button type="submit" class="btn btn-default">Excluir</button>
+                                {!! Form::open(['method' => 'DELETE', 'url' => '/clientes/'.$cliente->id, 'style' => 'display: inline;','onsubmit' => 'return confirm("Tem certeza que deseja excluir esse cliente?")']) !!}
+                                    <button type="submit" class="btn btn-default">Excluir</button>
                                 {!! Form::close() !!}
                                 </td>
                             </tr>

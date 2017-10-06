@@ -14,14 +14,15 @@ class ClientesController extends Controller
 {
     public function index()
     {
-        $clientes= Cliente::get();
-        $unidades = Unidade::get();
-    	return view('clientes.lista', ['clientes'=>$clientes, 'unidades'=>$unidades]);
+        $clientes = Cliente::todos();
+        $clientes2 = Cliente::get();
+    	return view('clientes.lista', ['clientes'=>$clientes, 'clientes2'=>$clientes2]);
     }
 
     public function novo()
     {
-    	return view('clientes.formulario');
+        $unidades = Unidade::all(['id', 'nome'])->pluck('nome', 'id');
+    	return view('clientes.formulario', ['unidades'=>$unidades]);
     }
 
     public function salvar(Request $request)
@@ -39,8 +40,8 @@ class ClientesController extends Controller
     public function editar($id){
 
         $cliente = Cliente::findOrFail($id);
-
-        return view('clientes.formulario', ['cliente' => $cliente]);
+        $unidades = Unidade::all(['id', 'nome'])->pluck('nome', 'id');
+        return view('clientes.formulario', ['cliente' => $cliente, 'unidades'=>$unidades]);
     }
 
     public function atualizar($id, Request $request){

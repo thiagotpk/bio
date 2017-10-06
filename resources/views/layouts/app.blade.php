@@ -12,6 +12,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/pnotify.custom.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -81,5 +82,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="{{ asset('js/pnotify.custom.js') }}"></script>
 </body>
 </html>
