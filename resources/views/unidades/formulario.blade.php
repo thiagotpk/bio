@@ -9,6 +9,7 @@
                         Informe abaixo as informações da Unidade.
                         <a class="pull-right" href="{{ url('unidades') }}">Lista de Unidades</a>
                     </div>
+                    @include('flash::message')
 
                     <div class="panel-body">
                         @if (session('mensagem_sucesso'))

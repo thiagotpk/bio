@@ -27,6 +27,7 @@
                         <th>Ações</th>
                         
                         <tbody>
+
                         @foreach($unidades as $unidade)
                             <tr>
                                 <td>{{ $unidade->nome }}</td>
@@ -37,8 +38,9 @@
                                 <td>{{ $unidade->cidade }}</td>
                                 <td>
                                     <a href="unidades/{{ $unidade->id }}/editar" class="btn btn-default">Editar</a>
-                                    {!! Form::open(['method' => 'DELETE', 'url' => '/unidades/'.$unidade->id, 'style' => 'display: inline;']) !!}
-                                    <button type="submit" class="btn btn-default">Excluir</button>
+                                    {!! Form::open(['method' => 'DELETE', 'url' => '/unidades/'.$unidade->id,
+                                    'style' => 'display: inline;']) !!}
+                                    <button type="submit" class="btn btn-default" >Excluir</button>
                                     {!! Form::close() !!}
                                 </td>
                             </tr>

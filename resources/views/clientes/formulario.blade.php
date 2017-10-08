@@ -34,7 +34,6 @@
                     {!! Form::label('numero','Número') !!}
                     {!! Form::number('numero',null, ['class' => 'form-control','required']) !!}
 
-                    {!! Form::label('email','Email') !!}
                     {!! Form::label('unidade_id','Unidade') !!}
                     {!! Form::select('unidade_id', $unidades, null, ['class' => 'form-control', 'placeholder'=>'Selecione uma unidade','required']) !!}
                     <br>

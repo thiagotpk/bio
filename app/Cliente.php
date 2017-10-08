@@ -17,7 +17,7 @@ class cliente extends Model
     ];
 
     public static function todos(){
-        $test = DB::table('clientes')->join('unidades', 'unidades.id', '=', 'clientes.unidade_id')->select('clientes.*','unidades.nome as nomeU')->get();
+        $test = DB::table('clientes')->leftjoin('unidades', 'unidades.id', '=', 'clientes.unidade_id')->select('clientes.*','unidades.nome as nomeU')->get();
         return $test;
     }
 }

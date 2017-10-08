@@ -81,8 +81,11 @@
     </div>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/jquery.js') }}"></script>
+    <script src="//code.jquery.com/jquery.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script>
+        $('#flash-overlay-modal').modal();
+    </script>
     <script src="{{ asset('js/pnotify.custom.js') }}"></script>
 </body>
 </html>

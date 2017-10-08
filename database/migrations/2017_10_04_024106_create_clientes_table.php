@@ -18,8 +18,8 @@ class CreateClientesTable extends Migration
             $table->string('nome',60);
             $table->text('endereco');
             $table->integer('numero');
-            $table->integer('unidade_id')->unsigned();
-            $table->foreign('unidade_id')->references('id')->on('unidades');
+            $table->integer('unidade_id')->unsigned()->nullable();
+            $table->foreign('unidade_id')->references('id')->on('unidades')->onDelete('set null');
         });
     }
 
