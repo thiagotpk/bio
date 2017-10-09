@@ -27,6 +27,9 @@ Route::get('unidades/{unidade}/editar', 'UnidadesController@editar');
 Route::patch('unidades/{unidade}', 'UnidadesController@atualizar');
 Route::delete('unidades/{unidade}', 'UnidadesController@deletar');
 
+Route::get('perfil/editar', 'HomeController@perfil');
+Route::patch('perfil/{perfil}', 'HomeController@atualizar');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
